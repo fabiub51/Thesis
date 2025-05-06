@@ -1,0 +1,9 @@
+docker run -ti --rm \
+    -v /Users/danieljanini/Documents/Thesis/miniblock:/data:ro \
+    -v /Users/danieljanini/Documents/Thesis/miniblock/derivatives:/out \
+    -v /Users/danieljanini/Documents/FreeSurfer/license.txt:/opt/freesurfer/license.txt \
+    nipreps/fmriprep:latest \
+    /data /out participant \
+    --fs-no-reconall \
+    --nthreads 4 --omp-nthreads 2 \
+    --participant-label 11 12
