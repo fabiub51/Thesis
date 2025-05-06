@@ -16,8 +16,6 @@ addpath(genpath('/home/fabiub99/decoding_toolbox'));
 spm('defaults', 'fmri');
 spm_jobman('initcfg');
 
-parpool('local', 4);  % Start parallel pool
-
 for design = designs
     design = char(design);
 
@@ -76,15 +74,12 @@ for design = designs
 
     cfg.design.function = 'make_design_cv';
     cfg.results.overwrite = 1;
-    cfg.verbose = 0;
+    cfg.verbose = 1;
     cfg.scale.method = 'min0max1global'; 
     cfg.scale.estimation = 'all';
     cfg.design = make_design_cv(cfg); 
 
     cfg.design.fig = 0;
-    
-    % NEW: use decoding toolbox parallelization
-    cfg.parallel.nproc = 4;
 
     decoding(cfg);  
 end

@@ -7,7 +7,6 @@ function run_decoding_searchlight(subj, design, smoothing)
     cfg.analysis = 'searchlight';  % Specify searchlight-based decoding (not ROI)
     cfg.decoding.software = 'libsvm';  % SVM library
     cfg.decoding.method = 'classification';
-    cfg.parallel.n_proc = 4;
 
     % Base directory where all the data is stored
     basedir = '/Users/danieljanini/Documents/Thesis/miniblock/Outputs';

@@ -3,12 +3,12 @@
 #SBATCH --output=logs/searchlight_%A_%a.out
 #SBATCH --error=logs/searchlight_%A_%a.err
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --time=07:00:00
+#SBATCH --cpus-per-task=3
+#SBATCH --time=30:00:00
 #SBATCH --mem=64G
 #SBATCH --partition=main
 #SBATCH --qos=standard
-#SBATCH --array=1-30    # <-- Run tasks 1 to 30 (for 30 participants)
+#SBATCH --array=1-17   
 
 # Load modules
 module purge
@@ -16,7 +16,7 @@ module load MATLAB/2021a
 module load spm/12
 
 # Define list of subject IDs
-subjects=( "02" "03" "04" "05" "06" "07" "08" "10"
+subjects=( "01" "02" "03" "04" "05" "06" "07" "08" "10"
            "11" "12" "13" "14" "15" "17" "18" "19" )
 
 # Pick subject based on SLURM_ARRAY_TASK_ID
