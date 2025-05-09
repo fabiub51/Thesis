@@ -14,7 +14,7 @@ function run_decoding(subj, design, smoothing, mask, output_dir)
     output_subfolder = output_dir;
 
     % Define beta folder based on inputs
-    beta_folder = fullfile(basedir, strcat(smoothing, '_',subj,'_',design), 'nifti_betas');
+    beta_folder = fullfile(basedir, subj, strcat(smoothing, '_',subj,'_',design), 'nifti_betas');
     cfg.results.dir = fullfile(basedir, 'decoding', 'ROI', output_subfolder, design, subj);
 
     % Beta images

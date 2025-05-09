@@ -3,9 +3,9 @@
 #SBATCH --output=logs/searchlight_%A_%a.out
 #SBATCH --error=logs/searchlight_%A_%a.err
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=3
-#SBATCH --time=30:00:00
-#SBATCH --mem=64G
+#SBATCH --cpus-per-task=1
+#SBATCH --time=33:00:00
+#SBATCH --mem=8G
 #SBATCH --partition=main
 #SBATCH --qos=standard
 #SBATCH --array=1-17   
